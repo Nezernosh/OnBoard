@@ -2,19 +2,26 @@
   "name": "on-board",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Pavel",
-  "scripts": {
-    "start": "webpack-dev-server --open",
-    "build": "webpack"
-  },
+  "repository": "https://github.com/Nezernosh/OnBoard.git",
+  "author": "Nezernosh <nereznosh@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --hot --inline --mode development"
+  },
   "dependencies": {
+    "mobx": "^5.0.3",
+    "mobx-react": "^5.2.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.11",
@@ -29,6 +36,11 @@
     "presets": [
       "react",
       "env"
+    ],
+    "plugins": [
+      "transform-decorators-legacy",
+      "transform-decorators",
+      "transform-class-properties"
     ]
   }
 }
