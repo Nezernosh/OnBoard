@@ -5,14 +5,14 @@ import { inject, observer } from 'mobx-react';
 @inject('nameStore')
 @observer
 class Main extends React.Component {
-    changeName = (e) => {
+    changeName = e => {
         e.preventDefault();
         const name = this.props.nameStore.currentInputValue;
         this.props.nameStore.addName(name);
-        this.props.nameStore.inputValue = '';
+        this.props.nameStore.clearInputValue();
     }
 
-    handleChange = (e) => {
+    handleChange = e => {
         this.props.nameStore.inputValue = e.target.value;
     };
 

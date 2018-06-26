@@ -1,16 +1,20 @@
 import { observable, action, computed } from 'mobx';
 
 class NameStore {
-    @observable names = ['username'];
+    @observable name = 'username';
 
     @observable inputValue = '';
 
-    @action addName = (name) => {
-        this.names.push(name);
+    @action addName = name => {
+        this.name = name;
+    }
+
+    @action clearInputValue = () => {
+        this.inputValue = '';
     }
 
     @computed get currentName() {
-        return this.names[this.names.length - 1];
+        return this.name;
     }
 
     @computed get currentInputValue() {

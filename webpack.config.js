@@ -1,11 +1,9 @@
-const path = require('path');
-
 module.exports = {
     mode: "development",
     entry: "./src/index.js",
     output: {
         filename: "bundle.js",
-        path: path.resolve(__dirname, "dist"),
+        path: require('path').resolve(__dirname, "dist"),
         publicPath: '/dist/'
     },
     devServer:{
@@ -17,8 +15,10 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: ['babel-loader']
-            },
+                use: {
+                  loader: "babel-loader"
+                }
+              },
             {
                 test: /.css$/,
                 use: [
@@ -35,7 +35,7 @@ module.exports = {
             {
                 test: /\.svg$/,
                 exclude: /node_modules/,
-                use: ['svg-react-loader']
+                loader: 'svg-react-loader'
             }
         ]
     }
