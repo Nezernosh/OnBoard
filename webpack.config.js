@@ -1,12 +1,9 @@
-const path = require('path');
-
 module.exports = {
     mode: 'development',
-    entry: "./src/index.js",
+    entry: './src/index.js',
     output: {
-        filename: "bundle.js",
-        path: path.resolve(__dirname, "dist"),
-        publicPath: '/dist/'
+        path: require('path').resolve(__dirname, 'dist'),
+        filename: 'bundle.js'
     },
     devServer: {
         open: true,
@@ -18,7 +15,7 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
-                    loader: 'babel-loader',
+                    loader: 'babel-loader'
                 }
             },
             {
@@ -37,7 +34,7 @@ module.exports = {
             {
                 test: /\.svg$/,
                 exclude: /node_modules/,
-                use: ['svg-react-loader']
+                loader: 'svg-react-loader'
             }
         ]
     }

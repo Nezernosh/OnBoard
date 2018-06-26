@@ -2,12 +2,12 @@
   "name": "on-board",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Pavel",
-  "scripts": {
-    "start": "webpack-dev-server --open",
-    "build": "webpack"
-  },
+  "repository": "https://github.com/Nezernosh/OnBoard.git",
+  "author": "Nezernosh <nereznosh@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --hot --inline --mode development"
+  },
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
@@ -18,17 +18,13 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.11",
-    "html-webpack-plugin": "^3.2.0",
     "style-loader": "^0.21.0",
     "svg-react-loader": "^0.4.5",
-    "webpack": "^4.12.0",
+    "webpack": "^4.12.1",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4"
   },
   "babel": {
-    "presets": [
-      "react",
-      "env"
-    ]
+    "presets": ["env", "react"]
   }
 }
