@@ -1,23 +1,24 @@
 module.exports = {
-    mode: 'development',
-    entry: './src/index.js',
+    mode: "development",
+    entry: "./src/index.js",
     output: {
-        path: require('path').resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: "bundle.js",
+        path: require('path').resolve(__dirname, "dist"),
+        publicPath: '/dist/'
     },
-    devServer: {
-        open: true,
+    devServer:{
+        open : true,
         openPage: '/dist'
     },
     module: {
         rules: [
             {
                 test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
+                exclude: /node_modules/,
                 use: {
-                    loader: 'babel-loader'
+                  loader: "babel-loader"
                 }
-            },
+              },
             {
                 test: /.css$/,
                 use: [
@@ -38,4 +39,4 @@ module.exports = {
             }
         ]
     }
-} 
+}
